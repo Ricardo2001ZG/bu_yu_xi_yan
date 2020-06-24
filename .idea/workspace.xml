@@ -26,10 +26,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ee2cee1-4495-425e-9225-e7322874ef04" name="Default Changelist" comment="README update">
-      <change afterPath="$PROJECT_DIR$/PRD/index_page_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PRD/index_page_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PRD/index_page_3.png" afterDir="false" />
+    <list default="true" id="9ee2cee1-4495-425e-9225-e7322874ef04" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592998428635</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="PRD update">
+      <created>1592998950705</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1592998950705</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -130,22 +138,24 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initialization." />
     <MESSAGE value="Initialization" />
     <MESSAGE value="README update" />
-    <option name="LAST_COMMIT_MESSAGE" value="README update" />
+    <MESSAGE value="PRD update" />
+    <option name="LAST_COMMIT_MESSAGE" value="PRD update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="461" y="164" key="SettingsEditor" timestamp="1592997792571">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1592997792571" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1592998516142">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1592998990007">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1592998516142" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1592998990007" />
   </component>
 </project>
