@@ -21,3 +21,5 @@ class AppMain extends StatelessWidget {
     );
   }
 }
+
+void main() {runApp(AppMain());}
