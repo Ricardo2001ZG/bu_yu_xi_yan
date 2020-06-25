@@ -8,6 +8,7 @@ class AppMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        /*启用本地化设置，对中文启用支持。*/
         localizationsDelegates: [
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
@@ -63,9 +64,37 @@ class AppMain extends StatelessWidget {
             /*通知栏代码*/
             Container(
               width: 260,
+              child: Column(children: [
+                Container(height: 65,color: Color(0xFFbbdefb),),
+                Expanded(child: Container(),),
+              ],),
             ),
             /*信息栏代码*/
-            Expanded(child: Container(),flex: 0,),
+            Expanded(
+              flex: 1,
+              child: Container(child: Column(
+                children: [
+                  Container(
+                    width: double.infinity,
+                    height: 65,
+                    color: Color(0xFFe3f2fd),
+                    /*标题文本定位*/
+                    child: Column(children: [
+                      Container(width:double.infinity,height: 30,),
+                      Container(
+                        width:double.infinity,
+                        child: Row(children: [
+                          Container(width: 30,),
+                          Container(child: Text(
+                            '标题文本',
+                            textAlign: TextAlign.left,
+                          ),),
+                        ],),
+                      ),
+                    ],),
+                  ),
+                  Expanded(flex:1, child: Container(child: Text('2'),),),
+            ],),),),
           ],),
         ),
     );
