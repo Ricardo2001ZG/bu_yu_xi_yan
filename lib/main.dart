@@ -74,11 +74,11 @@ class AppMain extends StatelessWidget {
               flex: 1,
               child: Container(child: Column(
                 children: [
+                  /*标题文本定位*/
                   Container(
                     width: double.infinity,
                     height: 65,
                     color: Color(0xFFe3f2fd),
-                    /*标题文本定位*/
                     child: Column(children: [
                       Container(width:double.infinity,height: 30,),
                       Container(
@@ -93,7 +93,60 @@ class AppMain extends StatelessWidget {
                       ),
                     ],),
                   ),
-                  Expanded(flex:1, child: Container(child: Text('2'),),),
+                  /*信息框*/
+                  Expanded(flex:2, child: Container(
+                    child: Container(
+                      width: double.infinity,
+                      color: Color(0x46bbdefb),
+                      child: Row(children: [
+                        Container(width: 30,), // 空白填充
+                        Expanded(
+                          flex:1,
+                          child: Container(width: double.infinity,child: Text('message'),),
+                        ),
+                      ],),
+                    ),
+                  ),),
+                  /*编辑框*/
+                  Expanded(flex:1, child: Container(
+                    child: Container(
+                      width: double.infinity,
+                      color: Color(0x1ebbdefb),
+                      child: Column(children: [
+                        Container(height: 10,), // 空白填充
+                        /*功能按钮区*/
+                        Container(
+                          height: 25,
+                          width: double.infinity,
+                          child: Row(children: [
+                            Container(width: 30,), // 空白填充
+                            Text('emjoy1'),
+                            Container(width: 10,), // 空白填充
+                            Text('emjoy2'),
+                            Container(width: 10,), // 空白填充
+                            Expanded(flex:1, child: Container(width: double.infinity,),), //空白填充
+                            Container(width: 10,), // 空白填充
+                            Text('emjoy3'),
+                            Container(width: 15,), // 空白填充
+                          ],),
+                        ),
+                        Container(height: 10,), // 空白填充
+                        /*文本输入区*/
+                        Expanded(flex: 1,child: Container(
+                          width: double.infinity,
+                          height: double.infinity,
+                          child: Row(children: [
+                            Container(width: 30,), // 空白填充
+                            Expanded(
+                              flex:1,
+                              child: Container(width: double.infinity,child: Text('write'),),
+                            ),
+                          ],),
+                        ),),
+                        Container(height: 10,), // 空白填充
+                      ],),
+                    ),
+                  ),),
             ],),),),
           ],),
         ),
