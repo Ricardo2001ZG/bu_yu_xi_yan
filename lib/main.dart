@@ -18,14 +18,14 @@ class AppMain extends StatelessWidget {
         ],
         title: '不语惜言',
         home:Scaffold(
-
+          /*
+          主界面的三个基础Container，将页面划分为左中右三部分。
+          最左侧为状态栏，中间为通知栏，右侧为信息栏。
+          其中，左侧固定宽度50，中间综合宽度260，右侧随系统填充。
+          左侧固定颜色64b5f6(300)。
+          */
           body: Row(children: [
-            /*
-            主界面的三个基础Container，将页面划分为左中右三部分。
-            最左侧为状态栏，中间为通知栏，右侧为信息栏。
-            其中，左侧固定宽度50，中间综合宽度260，右侧随系统填充。
-            左侧固定颜色64b5f6(300)。
-            */
+            /*状态栏代码*/
             Container(
               width: 50,
               color: Color(0xff64b5f6),
@@ -60,9 +60,11 @@ class AppMain extends StatelessWidget {
                 ),
               ],),
             ),
+            /*通知栏代码*/
             Container(
               width: 260,
             ),
+            /*信息栏代码*/
             Expanded(child: Container(),flex: 0,),
           ],),
         ),
