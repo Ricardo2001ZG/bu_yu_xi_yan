@@ -97,6 +97,7 @@ class AppMain extends StatelessWidget {
                   Expanded(flex:2, child: Container(
                     child: Container(
                       width: double.infinity,
+                      /* 使用透明度定义背景进行功能区块的区分 */
                       color: Color(0x46bbdefb),
                       child: Row(children: [
                         Container(width: 30,), // 空白填充
@@ -111,6 +112,7 @@ class AppMain extends StatelessWidget {
                   Expanded(flex:1, child: Container(
                     child: Container(
                       width: double.infinity,
+                      /* 使用透明度定义背景进行功能区块的区分 */
                       color: Color(0x1ebbdefb),
                       child: Column(children: [
                         Container(height: 10,), // 空白填充
