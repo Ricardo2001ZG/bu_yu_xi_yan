@@ -35,7 +35,9 @@ class AppMain extends StatelessWidget {
                 Container(height: 25,), //空白填充
                 Container(
                   height: 32,
-                  child: Image.network('http://127.0.0.1/user.jpg'),//头像
+                  child: ClipOval(
+                    child: Image.network('http://127.0.0.1/user.jpg'),//头像
+                  ),
                 ),
                 Container(height: 20,), //空白填充
                 Container(
@@ -65,8 +67,52 @@ class AppMain extends StatelessWidget {
             Container(
               width: 260,
               child: Column(children: [
-                Container(height: 65,color: Color(0xFFbbdefb),),
-                Expanded(child: Container(),),
+                Container(
+                  height: 65,
+                  color: Color(0xFFbbdefb),
+                  child: Column(children: [
+                    Container(height: 25,),
+                    // 搜索框与添加按钮实现
+                    Row(children: [
+                      Container(width: 10,), // 空白填充
+                      Container(
+                        width: 210,
+                        height: 30,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.circular(6.0),
+                          color: Color(0x50ffffff),
+                        ),
+                        child: Row(children: [
+                          Container(width: 5,), // 空白填充
+                          Container(
+                            width: 24,
+                            height: 24,
+                            child: Icon(Icons.search, color: Color(0xFF999999),),
+                          ), // 搜索图标
+                          Container(width: 5,), // 空白填充
+                          Text(
+                            'search',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(color: Color(0xC0999999)),
+                          ),
+                        ],),//
+                      ),
+                      Container(width: 5,), // 空白填充
+                      Container(
+                        width: 30,
+                        height: 30,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.circular(6.0),
+                          color: Color(0x50ffffff),
+                        ),
+                        child: Icon(Icons.add, color: Color(0xC0999999),),
+                      ),
+                    ],),
+                  ],),
+                ),
+                Expanded(child: Text('notice'),),
               ],),
             ),
             /*信息栏代码*/
