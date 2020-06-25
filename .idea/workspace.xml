@@ -26,7 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ee2cee1-4495-425e-9225-e7322874ef04" name="Default Changelist" comment="after dinner and bath update with nothing">
+    <list default="true" id="9ee2cee1-4495-425e-9225-e7322874ef04" name="Default Changelist" comment="layout update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
     </list>
@@ -42,6 +42,13 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/Ricardo2001ZG/bu_yu_xi_yan" />
+      </set>
+    </option>
   </component>
   <component name="ProjectId" id="1dlQOXOPmqPFKvjCZdozflXstwZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -197,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593085749379</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="layout update">
+      <created>1593090176340</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1593090176340</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,10 +248,10 @@
     <MESSAGE value="web environment update" />
     <MESSAGE value="status bar update" />
     <MESSAGE value="title text for message update" />
-    <MESSAGE value="layout update" />
     <MESSAGE value="dinner update" />
     <MESSAGE value="after dinner and bath update with nothing" />
-    <option name="LAST_COMMIT_MESSAGE" value="after dinner and bath update with nothing" />
+    <MESSAGE value="layout update" />
+    <option name="LAST_COMMIT_MESSAGE" value="layout update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593008197612">
@@ -260,14 +274,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="938" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593085764975" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1593063654752">
+    <state x="461" y="164" key="SettingsEditor" timestamp="1593090359888">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1593063654752" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1593085752795">
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1593090359888" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1593090179383">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1593085752795" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1593090179383" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1593066412843">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

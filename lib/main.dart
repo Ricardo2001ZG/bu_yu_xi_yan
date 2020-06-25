@@ -35,7 +35,9 @@ class AppMain extends StatelessWidget {
                 Container(height: 25,), //空白填充
                 Container(
                   height: 32,
+                  // 直接使用ClipOval处理成圆形
                   child: ClipOval(
+                    // Debug // 使用本地已有图像
                     child: Image.network('http://127.0.0.1/user.jpg'),//头像
                   ),
                 ),
@@ -92,7 +94,7 @@ class AppMain extends StatelessWidget {
                           ), // 搜索图标
                           Container(width: 5,), // 空白填充
                           Text(
-                            'search',
+                            '搜索',
                             textAlign: TextAlign.left,
                             style: TextStyle(color: Color(0xC0999999)),
                           ),
