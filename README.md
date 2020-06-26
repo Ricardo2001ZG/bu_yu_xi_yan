@@ -17,10 +17,10 @@ Base on [Flutter](https://flutter.dev/) .
 3.Clone.
 
 ```
-https://github.com/Ricardo2001ZG/bu_yu_xi_yan.git
+git clone https://github.com/Ricardo2001ZG/bu_yu_xi_yan.git
 ```
 
-4.Enjoy yourselfs.
+4.Enjoy yourself.
 
 ## 开始
 
@@ -37,7 +37,7 @@ https://github.com/Ricardo2001ZG/bu_yu_xi_yan.git
 3、下载代码。
 
 ```
-https://github.com/Ricardo2001ZG/bu_yu_xi_yan.git
+git clone https://github.com/Ricardo2001ZG/bu_yu_xi_yan.git
 ```
 
 4、解压后导入项目即可。经作者测试导入后可直接正常开发，如有问题请自行开启Flutter的Web支持，项目目前未适配 Web(Chrome Win10) 以外的任何平台。Windows 10、Linux、MacOS、Fuchsia长期计划支持。

@@ -1,6 +1,7 @@
 //With None License
 //Powered by Ricardo2001zg
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 
@@ -153,8 +154,12 @@ class BuYuXiYanMain extends StatelessWidget {
                         child: Row(children: [
                           Container(width: 30,),
                           Container(child: Text(
-                            '标题文本',
+                            '测试标题',
                             textAlign: TextAlign.left,
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500
+                            ),
                           ),),
                         ],),
                       ),
@@ -170,7 +175,15 @@ class BuYuXiYanMain extends StatelessWidget {
                         Container(width: 30,), // 空白填充
                         Expanded(
                           flex:1,
-                          child: Container(width: double.infinity,child: Text('message'),),
+                          child: Container(
+                            width: double.infinity,
+                            height: double.infinity,
+                            child: Text(
+                              'message',
+                              textAlign: TextAlign.start,
+                              style: TextStyle(color: Color(0xC0999999)),
+                            ),
+                          ),
                         ),
                       ],),
                     ),
@@ -189,13 +202,13 @@ class BuYuXiYanMain extends StatelessWidget {
                           width: double.infinity,
                           child: Row(children: [
                             Container(width: 30,), // 空白填充
-                            Text('emjoy1'),
+                            Icon(Icons.tag_faces, color: Colors.grey,),
                             Container(width: 10,), // 空白填充
-                            Text('emjoy2'),
+                            Icon(Icons.file_upload, color: Colors.grey,),
                             Container(width: 10,), // 空白填充
                             Expanded(flex:1, child: Container(width: double.infinity,),), //空白填充
                             Container(width: 10,), // 空白填充
-                            Text('call'),
+                            Icon(Icons.local_phone, color: Colors.grey,),
                             Container(width: 15,), // 空白填充
                           ],),
                         ),
@@ -208,7 +221,15 @@ class BuYuXiYanMain extends StatelessWidget {
                             Container(width: 30,), // 空白填充
                             Expanded(
                               flex:1,
-                              child: Container(width: double.infinity,child: Text('write'),),
+                              child: Container(
+                                width: double.infinity,
+                                height: double.infinity,
+                                child: Text(
+                                  '基于 Flutter 的消息聚合与即时通讯系统。',
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(color: Color(0xC0999999)),
+                                ),
+                              ),
                             ),
                           ],),
                         ),),
