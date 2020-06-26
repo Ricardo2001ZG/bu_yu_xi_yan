@@ -4,6 +4,7 @@
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 
+// 此处为路由实现，处理页面跳转，并将所有全局变量写在此处
 class BuYuXiYanRoute extends StatefulWidget {
   @override
   _BuYuXiYanRouteState createState() => _BuYuXiYanRouteState();
@@ -12,16 +13,17 @@ class BuYuXiYanRoute extends StatefulWidget {
 class _BuYuXiYanRouteState extends State<BuYuXiYanRoute> {
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute:"/",
+      initialRoute:"/message",
       routes:{
         "/":(context) => FlatButton(child: Text('1'),onPressed: (){Navigator.pushNamed(context, "/message");},),
-        "/message":(context) => AppMain(),
+        "/message":(context) => BuYuXiYanMain(),
       },
     );
   }
 }
 
-class AppMain extends StatelessWidget {
+// 静态界面实现，并调用动态控件
+class BuYuXiYanMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
