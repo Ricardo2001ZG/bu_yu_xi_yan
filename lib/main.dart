@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 
-// 此处为路由实现，处理页面跳转，并将所有全局变量写在此处
+// 此处为路由实现，处理页面跳转，并将所有全局变量写在此处统一管理
 class BuYuXiYanRoute extends StatefulWidget {
   @override
   _BuYuXiYanRouteState createState() => _BuYuXiYanRouteState();
@@ -41,6 +41,57 @@ class _BuYuXiYanRouteState extends State<BuYuXiYanRoute> {
     );
   }
 }
+
+// 信息输入框动态刷新与保存实现
+class BuYuXiYanSendTextField extends StatefulWidget {
+  BuYuXiYanSendTextField ({Key key}) : super(key : key);
+
+  @override
+  _BuYuXiYanSendTextFieldState createState() =>  _BuYuXiYanSendTextFieldState();
+}
+
+class _BuYuXiYanSendTextFieldState extends State<BuYuXiYanSendTextField> {
+  TextEditingController _controller;
+
+  void initState() {
+    super.initState();
+    _controller = TextEditingController();
+    _controller.text = '基于 Flutter 的消息聚合与即时通讯系统。';
+  }
+
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  Widget build(BuildContext context) {
+    return TextField(
+      decoration: null,
+      maxLines: null,
+      controller: _controller,
+      keyboardType: TextInputType.multiline,
+      /*onSubmitted: (String value) async {
+        await showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: const Text('Thanks!'),
+              content: Text('You typed "$value".'),
+              actions: <Widget>[
+                FlatButton(
+                  onPressed: () {Navigator.pop(context);},
+                  child: const Text('OK'),
+                ),
+              ],
+            );
+          },
+        );
+      },*/
+    );
+  }
+}
+
+// 搜索框动态刷新与保存实现
 
 // 主界面静态实现，并调用动态控件
 class BuYuXiYanMain extends StatelessWidget {
@@ -243,16 +294,18 @@ class BuYuXiYanMain extends StatelessWidget {
                               child: Container(
                                 width: double.infinity,
                                 height: double.infinity,
-                                child: Text(
+                                child: BuYuXiYanSendTextField(),/*Text(
                                   '基于 Flutter 的消息聚合与即时通讯系统。',
                                   textAlign: TextAlign.start,
                                   style: TextStyle(color: Color(0xC0999999)),
-                                ),
+                                ),*/
                               ),
                             ),
+                            Container(width: 10,), // 空白填充
                           ],),
                         ),),
                         Container(height: 10,), // 空白填充
+                        Container(height: 30,), // 发送按钮占位
                       ],),
                     ),
                   ),),

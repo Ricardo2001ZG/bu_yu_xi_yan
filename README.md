@@ -20,7 +20,16 @@ Base on [Flutter](https://flutter.dev/) .
 git clone https://github.com/Ricardo2001ZG/bu_yu_xi_yan.git
 ```
 
-4.Enjoy yourself.
+4.If you want to build your web application,
+you need to use experimental canvas,
+because of the bug [issues/55627](https://github.com/flutter/flutter/issues/55627)
+in TextField.
+
+```
+flutter build web --dart-define=FLUTTER_WEB_USE_EXPERIMENTAL_CANVAS_TEXT=true
+```
+
+5.Enjoy yourself.
 
 ## 开始
 
@@ -41,6 +50,17 @@ git clone https://github.com/Ricardo2001ZG/bu_yu_xi_yan.git
 ```
 
 4、解压后导入项目即可。经作者测试导入后可直接正常开发，如有问题请自行开启Flutter的Web支持，项目目前未适配 Web(Chrome Win10) 以外的任何平台。Windows 10、Linux、MacOS、Fuchsia长期计划支持。
+
+5、如果需要build构建web程序，建议开启 experimental canvas ，原因为TextField在
+多行显示时会出现无法选中部分段落的bug [issues/55627](https://github.com/flutter/flutter/issues/55627) 。
+
+同时提醒，即使开启了实验canvas渲染，在多行段落选择时光标仍会出现错位现象。
+
+开启方式为
+
+```
+flutter build web --dart-define=FLUTTER_WEB_USE_EXPERIMENTAL_CANVAS_TEXT=true
+```
 
 ## 项目预期(Expectation)
 
