@@ -4,6 +4,14 @@
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 
+class BuYuXiYanRoute extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
+  }
+}
+
 class AppMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
