@@ -6,9 +6,12 @@ import 'package:flutter/material.dart';
 
 class BuYuXiYanRoute extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    throw UnimplementedError();
+  _BuYuXiYanRouteState createState() => _BuYuXiYanRouteState();
+}
+
+class _BuYuXiYanRouteState extends State<BuYuXiYanRoute> {
+  Widget build(BuildContext context) {
+    return Text('1');
   }
 }
 
