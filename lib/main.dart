@@ -14,16 +14,35 @@ class BuYuXiYanRoute extends StatefulWidget {
 class _BuYuXiYanRouteState extends State<BuYuXiYanRoute> {
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute:"/main",
+      initialRoute:"/index",
       routes:{
-        "/":(context) => FlatButton(child: Text('1'),onPressed: (){Navigator.pushNamed(context, "/main");},),
+        "/index":(context) => Scaffold(body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          alignment: Alignment.center,
+          child: Container(
+            width: 65,
+            height: 25,
+            decoration: BoxDecoration(
+              shape: BoxShape.rectangle,
+              borderRadius: BorderRadius.circular(6.0),
+              color: Color(0xFFe3f2fd),
+            ),
+            child: FlatButton(child: Text(
+                '登陆',
+                style: TextStyle(color: Color(0xFF999999),),
+              ),
+              onPressed: (){Navigator.pushNamed(context, "/main");},
+            ),
+          ),
+        ),),
         "/main":(context) => BuYuXiYanMain(),
       },
     );
   }
 }
 
-// 静态界面实现，并调用动态控件
+// 主界面静态实现，并调用动态控件
 class BuYuXiYanMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
