@@ -11,7 +11,13 @@ class BuYuXiYanRoute extends StatefulWidget {
 
 class _BuYuXiYanRouteState extends State<BuYuXiYanRoute> {
   Widget build(BuildContext context) {
-    return Text('1');
+    return MaterialApp(
+      initialRoute:"/",
+      routes:{
+        "/":(context) => FlatButton(child: Text('1'),onPressed: (){Navigator.pushNamed(context, "/message");},),
+        "/message":(context) => AppMain(),
+      },
+    );
   }
 }
 
@@ -215,4 +221,4 @@ class AppMain extends StatelessWidget {
   }
 }
 
-void main() => runApp(AppMain());
+void main() => runApp(BuYuXiYanRoute());
