@@ -1,11 +1,15 @@
 //With None License
 //Powered by Ricardo2001zg
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 
-// 此处为路由实现，处理页面跳转，并将所有全局变量写在此处统一管理
+// 全局变量统一管理
+class Global {
+
+}
+
+// 此处为路由实现，处理页面跳转
 class BuYuXiYanRoute extends StatefulWidget {
   @override
   _BuYuXiYanRouteState createState() => _BuYuXiYanRouteState();
@@ -14,9 +18,9 @@ class BuYuXiYanRoute extends StatefulWidget {
 class _BuYuXiYanRouteState extends State<BuYuXiYanRoute> {
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute:"/index",
+      initialRoute:"/login",
       routes:{
-        "/index":(context) => Scaffold(body: Container(
+        "/login":(context) => Scaffold(body: Container(
           width: double.infinity,
           height: double.infinity,
           alignment: Alignment.center,
@@ -45,7 +49,6 @@ class _BuYuXiYanRouteState extends State<BuYuXiYanRoute> {
 // 信息输入框动态刷新与保存实现
 class BuYuXiYanSendTextField extends StatefulWidget {
   BuYuXiYanSendTextField ({Key key}) : super(key : key);
-
   @override
   _BuYuXiYanSendTextFieldState createState() =>  _BuYuXiYanSendTextFieldState();
 }
@@ -92,6 +95,70 @@ class _BuYuXiYanSendTextFieldState extends State<BuYuXiYanSendTextField> {
 }
 
 // 搜索框动态刷新与保存实现
+
+// 通知栏双ListView切换部分，设计上支持复制至其他程序也可直接调用
+// Powered by Ricardo2001zg
+class BuYuXiYanDoubleListView extends StatefulWidget {
+  BuYuXiYanDoubleListView ({Key key}) : super(key : key);
+  @override
+  _BuYuXiYanDoubleListViewState createState() =>  _BuYuXiYanDoubleListViewState();
+}
+
+// 对信息储存方式的定义
+class BuYuXiYanDoubleListViewGlobalTypedef extends Object {
+  String listTitle;
+  String listDescription;
+  Image listImg;
+  String listTime;
+}
+
+class _BuYuXiYanDoubleListViewState extends State<BuYuXiYanDoubleListView> {
+  // 用于持久化存储两个ListView的信息
+  List<BuYuXiYanDoubleListViewGlobalTypedef> buYuXiYanList1 = [];
+  List<BuYuXiYanDoubleListViewGlobalTypedef> buYuXiYanList2 = [];
+  // 以单个节点定义的数据格式进行存储
+  void listAdd(String listTitle, String listDescription, Image listImg, String listTime, int whichList, ){
+    BuYuXiYanDoubleListViewGlobalTypedef addPoint = new BuYuXiYanDoubleListViewGlobalTypedef();
+    addPoint.listTitle = listTitle;
+    addPoint.listDescription = listDescription;
+    addPoint.listImg = listImg;
+    addPoint.listTime = listTime;
+    if (whichList == 1){buYuXiYanList1.add(addPoint);
+    } else if (whichList == 2){buYuXiYanList2.add(addPoint);}
+  }
+  // 较多信息一栏单行渲染
+  Ink moreInformation (String listTitle, String listDescription, Image listImg, String listTime,){
+    return Ink(
+      color: Color(0xFFbbdefb),
+      child: Text('more'),
+    );
+  }
+  // 较少信息一栏单行渲染
+  Ink lessInformation (String listTitle, String listDescription, Image listImg, String listTime,){
+    return Ink(
+      color: Color(0xFFe3f2fd),
+      child: Text('less'),
+    );
+  }
+
+  Container listReverse(int listReverse) {
+    if(listReverse == 1){
+      return Container(
+          width: double.infinity,
+          height: double.infinity,
+          child: Row(children: [
+            Container(),
+          ],),);
+    }else if(listReverse == 2){return Container();}
+    return Container();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return listReverse(1);
+  }
+}
+// 通知栏双ListView切换部分结束
 
 // 主界面静态实现，并调用动态控件
 class BuYuXiYanMain extends StatelessWidget {
