@@ -1,6 +1,8 @@
 //With None License
 //Powered by Ricardo2001zg
 
+import 'dart:html';
+
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 
@@ -108,7 +110,7 @@ class BuYuXiYanDoubleListView extends StatefulWidget {
 class BuYuXiYanDoubleListViewGlobalTypedef extends Object {
   String listTitle;
   String listDescription;
-  Image listImg;
+  int listImg;
   String listTime;
 }
 
@@ -117,7 +119,7 @@ class _BuYuXiYanDoubleListViewState extends State<BuYuXiYanDoubleListView> {
   List<BuYuXiYanDoubleListViewGlobalTypedef> buYuXiYanList1 = [];
   List<BuYuXiYanDoubleListViewGlobalTypedef> buYuXiYanList2 = [];
   // 以单个节点定义的数据格式进行存储
-  void listAdd(String listTitle, String listDescription, Image listImg, String listTime, int whichList, ){
+  void listAdd(String listTitle, String listDescription, int listImg, String listTime, int whichList, ){
     BuYuXiYanDoubleListViewGlobalTypedef addPoint = new BuYuXiYanDoubleListViewGlobalTypedef();
     addPoint.listTitle = listTitle;
     addPoint.listDescription = listDescription;
@@ -125,13 +127,16 @@ class _BuYuXiYanDoubleListViewState extends State<BuYuXiYanDoubleListView> {
     addPoint.listTime = listTime;
     if (whichList == 1){buYuXiYanList1.add(addPoint);
     } else if (whichList == 2){buYuXiYanList2.add(addPoint);}
+    print(List.of(buYuXiYanList1).length);
   }
+
   // 较多信息一栏单行渲染
-  Ink moreInformation (String listTitle, String listDescription, Image listImg, String listTime,){
+  Ink moreInformation (String listTitle, String listDescription, int listImg, String listTime,){
     return Ink(
       child: Text('more'),
     );
   }
+
   // 较少信息一栏单行渲染
   Ink lessInformation (String listTitle, String listDescription, Image listImg, String listTime,){
     return Ink(
@@ -149,6 +154,19 @@ class _BuYuXiYanDoubleListViewState extends State<BuYuXiYanDoubleListView> {
               width: 220,
               height: double.infinity,
               color: Color(0xFFbbdefb),
+              child: ListView.separated(
+                // reverse: true,
+                itemCount: List.of(buYuXiYanList1).length,
+                separatorBuilder: (BuildContext context, int index){return Container(height:5,color: Colors.white,);},//间隔空条
+                itemBuilder: (BuildContext context, int index){
+                  return moreInformation(
+                    List.of(buYuXiYanList1)[index].listTitle,
+                    List.of(buYuXiYanList1)[index].listDescription,
+                    List.of(buYuXiYanList1)[index].listImg,
+                    List.of(buYuXiYanList1)[index].listTime,
+                  );
+                },
+              ),
             ),
             Container(
               width: 40,
@@ -184,6 +202,8 @@ class _BuYuXiYanDoubleListViewState extends State<BuYuXiYanDoubleListView> {
 
 // 主界面静态实现，并调用动态控件
 class BuYuXiYanMain extends StatelessWidget {
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -394,7 +414,22 @@ class BuYuXiYanMain extends StatelessWidget {
                           ],),
                         ),),
                         Container(height: 10,), // 空白填充
-                        Container(height: 30,), // 发送按钮占位
+                        Container(
+                          height: 25,
+                          child: Row(children: [
+                            Expanded(child: Container(width: double.infinity,),),
+                            Container(
+                              width: 65,
+                              height: 25,
+                              child: OutlineButton(
+                                child: Text("发送"),
+                                onPressed: () {},
+                              ),
+                            ),
+                            Container(width: 15,),
+                          ],),
+                        ),// 发送按钮
+                        Container(height: 15,),
                       ],),
                     ),
                   ),),
