@@ -18,7 +18,7 @@ class BuYuXiYanRoute extends StatefulWidget {
 class _BuYuXiYanRouteState extends State<BuYuXiYanRoute> {
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute:"/login",
+      initialRoute:"/main",
       routes:{
         "/login":(context) => Scaffold(body: Container(
           width: double.infinity,
@@ -129,14 +129,12 @@ class _BuYuXiYanDoubleListViewState extends State<BuYuXiYanDoubleListView> {
   // 较多信息一栏单行渲染
   Ink moreInformation (String listTitle, String listDescription, Image listImg, String listTime,){
     return Ink(
-      color: Color(0xFFbbdefb),
       child: Text('more'),
     );
   }
   // 较少信息一栏单行渲染
   Ink lessInformation (String listTitle, String listDescription, Image listImg, String listTime,){
     return Ink(
-      color: Color(0xFFe3f2fd),
       child: Text('less'),
     );
   }
@@ -147,9 +145,33 @@ class _BuYuXiYanDoubleListViewState extends State<BuYuXiYanDoubleListView> {
           width: double.infinity,
           height: double.infinity,
           child: Row(children: [
-            Container(),
+            Container(
+              width: 220,
+              height: double.infinity,
+              color: Color(0xFFbbdefb),
+            ),
+            Container(
+              width: 40,
+              height: double.infinity,
+              color: Color(0xFFe3f2fd),
+            ),
           ],),);
-    }else if(listReverse == 2){return Container();}
+    }else if(listReverse == 2){
+      return Container(
+        width: double.infinity,
+        height: double.infinity,
+        child: Row(children: [
+          Container(
+            width: 40,
+            height: double.infinity,
+            color: Color(0xFFbbdefb),
+          ),
+          Container(
+            width: 220,
+            height: double.infinity,
+            color: Color(0xFFe3f2fd),
+          ),
+        ],),);}
     return Container();
   }
 
@@ -271,7 +293,7 @@ class BuYuXiYanMain extends StatelessWidget {
                     ],),
                   ],),
                 ),
-                Expanded(child: Text('notice'),),
+                Expanded(child: BuYuXiYanDoubleListView()),
               ],),
             ),
             /*信息栏代码*/
