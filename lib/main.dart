@@ -20,7 +20,7 @@ class BuYuXiYanRoute extends StatefulWidget {
 class _BuYuXiYanRouteState extends State<BuYuXiYanRoute> {
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute:"/main",
+      initialRoute:"/login",
       routes:{
         "/login":(context) => Scaffold(body: Container(
           width: double.infinity,
@@ -98,7 +98,7 @@ class _BuYuXiYanSendTextFieldState extends State<BuYuXiYanSendTextField> {
 
 // 搜索框动态刷新与保存实现
 
-// 通知栏双ListView切换部分，设计上支持复制至其他程序也可直接调用
+// 通知栏双ListView切换部分
 // Powered by Ricardo2001zg
 class BuYuXiYanDoubleListView extends StatefulWidget {
   BuYuXiYanDoubleListView ({Key key}) : super(key : key);
@@ -110,7 +110,7 @@ class BuYuXiYanDoubleListView extends StatefulWidget {
 class BuYuXiYanDoubleListViewGlobalTypedef extends Object {
   String listTitle;
   String listDescription;
-  int listImg;
+  String listImg;
   String listTime;
 }
 
@@ -119,7 +119,7 @@ class _BuYuXiYanDoubleListViewState extends State<BuYuXiYanDoubleListView> {
   List<BuYuXiYanDoubleListViewGlobalTypedef> buYuXiYanList1 = [];
   List<BuYuXiYanDoubleListViewGlobalTypedef> buYuXiYanList2 = [];
   // 以单个节点定义的数据格式进行存储
-  void listAdd(String listTitle, String listDescription, int listImg, String listTime, int whichList, ){
+  void listAdd(String listTitle, String listDescription, String listImg, String listTime, int whichList, ){
     BuYuXiYanDoubleListViewGlobalTypedef addPoint = new BuYuXiYanDoubleListViewGlobalTypedef();
     addPoint.listTitle = listTitle;
     addPoint.listDescription = listDescription;
@@ -127,20 +127,106 @@ class _BuYuXiYanDoubleListViewState extends State<BuYuXiYanDoubleListView> {
     addPoint.listTime = listTime;
     if (whichList == 1){buYuXiYanList1.add(addPoint);
     } else if (whichList == 2){buYuXiYanList2.add(addPoint);}
-    print(List.of(buYuXiYanList1).length);
   }
 
   // 较多信息一栏单行渲染
-  Ink moreInformation (String listTitle, String listDescription, int listImg, String listTime,){
+  Ink moreInformation (String listTitle, String listDescription, String listImg, String listTime,){
     return Ink(
-      child: Text('more'),
+      child: Container(
+        height: 75,
+        width: double.infinity,
+        color: Color(0x14ffffff),
+        child: Column(children: [
+          Container(height: 15,), // 空白填充
+          Expanded(
+            flex: 1,
+            child: Container(
+              width: double.infinity,
+              height: double.infinity,
+              child: Row(children: [
+                Container(width: 10,), // 空白填充
+                Container(
+                  height: 48,
+                  // 直接使用ClipOval处理成圆形
+                  child: ClipOval(
+                    // Debug // 使用本地已有图像
+                    child: Image.network(listImg),//头像
+                  ),
+                ),
+                Container(width: 10,), // 空白填充
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    width: double.infinity,
+                    height: double.infinity,
+                    child: Column(children: [
+                      Expanded(
+                        flex: 1,
+                        child: Container(
+                          width: double.infinity,
+                          height: double.infinity,
+                          child: Row(children: [
+                            Text(
+                              listTitle,
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Color(0xff505050),
+                              ),
+                            ),
+                            Expanded(flex:1, child: Container(width: double.infinity,),), // 空白填充
+                            Text(
+                              listTime,
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                fontSize: 13,
+                                color: Color(0xff808080),
+                              ),
+                            ),
+                          ],),
+                        ),
+                      ),
+                      Container(
+                        height: 20,
+                        width: double.infinity,
+                        child: Text(
+                          listDescription,
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Color(0xff808080),
+                          ),
+                        ),
+                      ),
+                    ],),
+                  ),
+                ),
+                Container(width: 15,), // 空白填充
+              ],),
+            ),
+          ),
+          Container(height: 15,), // 空白填充
+        ],),
+      ),
     );
   }
 
   // 较少信息一栏单行渲染
-  Ink lessInformation (String listTitle, String listDescription, Image listImg, String listTime,){
+  Ink lessInformation (String listImg,){
     return Ink(
-      child: Text('less'),
+      child: Container(
+        width: 32,
+        height: 32,
+        child: Container(
+          alignment: Alignment.center,
+          height: 24,
+          // 直接使用ClipOval处理成圆形
+          child: ClipOval(
+            // Debug // 使用本地已有图像
+            child: Image.network(listImg),//头像
+          ),
+        ),
+      ),
     );
   }
 
@@ -157,7 +243,7 @@ class _BuYuXiYanDoubleListViewState extends State<BuYuXiYanDoubleListView> {
               child: ListView.separated(
                 // reverse: true,
                 itemCount: List.of(buYuXiYanList1).length,
-                separatorBuilder: (BuildContext context, int index){return Container(height:5,color: Colors.white,);},//间隔空条
+                separatorBuilder: (BuildContext context, int index){return Container();},//空白填充,此处置空备用
                 itemBuilder: (BuildContext context, int index){
                   return moreInformation(
                     List.of(buYuXiYanList1)[index].listTitle,
@@ -172,6 +258,14 @@ class _BuYuXiYanDoubleListViewState extends State<BuYuXiYanDoubleListView> {
               width: 40,
               height: double.infinity,
               color: Color(0xFFe3f2fd),
+              child:  ListView.separated(
+                // reverse: true,
+                itemCount: List.of(buYuXiYanList2).length,
+                separatorBuilder: (BuildContext context, int index){return Container(height: 10,);},//空白填充,此处置空备用
+                itemBuilder: (BuildContext context, int index){
+                  return lessInformation(List.of(buYuXiYanList2)[index].listImg,);
+                },
+              ),
             ),
           ],),);
     }else if(listReverse == 2){
@@ -195,6 +289,35 @@ class _BuYuXiYanDoubleListViewState extends State<BuYuXiYanDoubleListView> {
 
   @override
   Widget build(BuildContext context) {
+    listAdd('微信来源1', '您有99+条未读信息', 'http://127.0.0.1/testdata/weixin.png', '08:11', 1,);
+    listAdd('Telegram来源1', '您有99+条未读信息', 'http://127.0.0.1/testdata/telegram.png', '08:10', 1,);
+    listAdd('QQ来源1', '您有99+条未读信息', 'http://127.0.0.1/testdata/tencent.png', '08:09', 1,);
+    listAdd('微信来源2', '您有99+条未读信息', 'http://127.0.0.1/testdata/weixin.png', '08:08', 1,);
+    listAdd('Telegram来源2', '您有99+条未读信息', 'http://127.0.0.1/testdata/telegram.png', '08:07', 1,);
+    listAdd('QQ来源2', '您有99+条未读信息', 'http://127.0.0.1/testdata/tencent.png', '08:06', 1,);
+    listAdd('微信来源3', '您有99+条未读信息', 'http://127.0.0.1/testdata/weixin.png', '08:05', 1,);
+    listAdd('Telegram来源3', '您有99+条未读信息', 'http://127.0.0.1/testdata/telegram.png', '08:04', 1,);
+    listAdd('QQ来源3', '您有99+条未读信息', 'http://127.0.0.1/testdata/tencent.png', '08:03', 1,);
+    listAdd('测试', '收到1条新的测试消息', 'http://127.0.0.1/testdata/user1.jpg', '08:01', 2,);
+    listAdd('测试', '收到2条新的测试消息', 'http://127.0.0.1/testdata/user2.jpg', '08:02', 2,);
+    listAdd('测试', '收到3条新的测试消息', 'http://127.0.0.1/testdata/user3.jpg', '08:03', 2,);
+    listAdd('测试', '收到4条新的测试消息', 'http://127.0.0.1/testdata/user4.jpg', '08:04', 2,);
+    listAdd('测试', '收到5条新的测试消息', 'http://127.0.0.1/testdata/user5.jpg', '08:05', 2,);
+    listAdd('测试', '收到6条新的测试消息', 'http://127.0.0.1/testdata/user6.jpg', '08:06', 2,);
+    listAdd('测试', '收到7条新的测试消息', 'http://127.0.0.1/testdata/user7.jpg', '08:07', 2,);
+    listAdd('测试', '收到8条新的测试消息', 'http://127.0.0.1/testdata/user8.jpg', '08:08', 2,);
+    listAdd('测试', '收到9条新的测试消息', 'http://127.0.0.1/testdata/user9.jpg', '08:09', 2,);
+    listAdd('测试', '收到10条新的测试消息', 'http://127.0.0.1/testdata/user10.jpg', '08:10', 2,);
+    listAdd('测试', '收到1条新的测试消息', 'http://127.0.0.1/testdata/user1.jpg', '08:01', 2,);
+    listAdd('测试', '收到2条新的测试消息', 'http://127.0.0.1/testdata/user2.jpg', '08:02', 2,);
+    listAdd('测试', '收到3条新的测试消息', 'http://127.0.0.1/testdata/user3.jpg', '08:03', 2,);
+    listAdd('测试', '收到4条新的测试消息', 'http://127.0.0.1/testdata/user4.jpg', '08:04', 2,);
+    listAdd('测试', '收到5条新的测试消息', 'http://127.0.0.1/testdata/user5.jpg', '08:05', 2,);
+    listAdd('测试', '收到6条新的测试消息', 'http://127.0.0.1/testdata/user6.jpg', '08:06', 2,);
+    listAdd('测试', '收到7条新的测试消息', 'http://127.0.0.1/testdata/user7.jpg', '08:07', 2,);
+    listAdd('测试', '收到8条新的测试消息', 'http://127.0.0.1/testdata/user8.jpg', '08:08', 2,);
+    listAdd('测试', '收到9条新的测试消息', 'http://127.0.0.1/testdata/user9.jpg', '08:09', 2,);
+    listAdd('测试', '收到10条新的测试消息', 'http://127.0.0.1/testdata/user10.jpg', '08:10', 2,);
     return listReverse(1);
   }
 }
@@ -202,7 +325,6 @@ class _BuYuXiYanDoubleListViewState extends State<BuYuXiYanDoubleListView> {
 
 // 主界面静态实现，并调用动态控件
 class BuYuXiYanMain extends StatelessWidget {
-
 
   @override
   Widget build(BuildContext context) {
@@ -359,7 +481,7 @@ class BuYuXiYanMain extends StatelessWidget {
                             height: double.infinity,
                             child: Text(
                               'message',
-                              textAlign: TextAlign.start,
+                              textAlign: TextAlign.center,
                               style: TextStyle(color: Color(0xC0999999)),
                             ),
                           ),
