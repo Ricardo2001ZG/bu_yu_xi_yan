@@ -359,7 +359,7 @@ class BuYuXiYanMain extends StatelessWidget {
                   height: 32,
                   // 直接使用ClipOval处理成圆形
                   child: ClipOval(
-                    // Debug // 使用本地已有图像
+                    // Debug // 使用本地已有图像作为测试数据
                     child: Image.network('http://127.0.0.1/testdata/user.jpg'),//头像
                   ),
                 ),
