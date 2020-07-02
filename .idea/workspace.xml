@@ -26,10 +26,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ee2cee1-4495-425e-9225-e7322874ef04" name="Default Changelist" comment="double ListView update">
-      <change afterPath="$PROJECT_DIR$/PRD/testpage.png" afterDir="false" />
+    <list default="true" id="9ee2cee1-4495-425e-9225-e7322874ef04" name="Default Changelist" comment="layout update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -311,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593649134562</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="layout update">
+      <created>1593658651070</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1593658651070</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -352,12 +357,12 @@
     <MESSAGE value="after dinner and bath update with nothing" />
     <MESSAGE value="after lunch update with nothing" />
     <MESSAGE value="route update" />
-    <MESSAGE value="layout update" />
     <MESSAGE value="dinner update with sauce duck and rice" />
     <MESSAGE value="sleep update" />
     <MESSAGE value="double ListView update" />
     <MESSAGE value="wake up update" />
-    <option name="LAST_COMMIT_MESSAGE" value="wake up update" />
+    <MESSAGE value="layout update" />
+    <option name="LAST_COMMIT_MESSAGE" value="layout update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593008197612">
@@ -368,30 +373,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593176329675" />
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1593658343823">
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1593659780147">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593658343823" />
-    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1593658343823">
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593659780147" />
+    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1593659780147">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593658343823" />
-    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1593658343823">
+    <state width="1877" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593659780147" />
+    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1593659780146">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593658343823" />
-    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1593658343823">
+    <state width="1877" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593659780146" />
+    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1593659780147">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593658343823" />
+    <state width="1877" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593659780147" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1593090359888">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1593090359888" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1593649139305">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1593658653521">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1593649139305" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1593658653521" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1593657956913">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
