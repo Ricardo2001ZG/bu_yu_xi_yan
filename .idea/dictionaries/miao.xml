@@ -2,6 +2,9 @@
   <dictionary name="miao">
     <words>
       <w>apptitle</w>
+      <w>testdata</w>
+      <w>testip</w>
+      <w>weixin</w>
     </words>
   </dictionary>
 </component>

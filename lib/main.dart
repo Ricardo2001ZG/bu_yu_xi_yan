@@ -1,8 +1,6 @@
 //With None License
 //Powered by Ricardo2001zg
 
-import 'dart:html';
-
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 
